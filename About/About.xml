@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>Warhammer 40.000 - Abhumans</name>
+	<author>Phonicmas</author>
+	<supportedVersions>
+		<li>1.4</li>
+	</supportedVersions>
+	<packageId>Phonicmas.40kAbhumans</packageId>
+	<description>
+		Warhammer 40k - Abhumans module.
+	</description>
+	<modDependencies>
+		<li>
+			<packageId>Ludeon.RimWorld.Biotech</packageId>
+			<displayName>Biotech</displayName>
+		</li>
+		<li>
+			<packageId>Phonicmas.40kCore</packageId>
+			<displayName>Warhammer 40k - Core</displayName>
+			<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=3025477432</steamWorkshopUrl>
+		</li>
+	</modDependencies>
+	<loadAfter>
+		<li>Ludeon.RimWorld</li>
+		<li>Ludeon.RimWorld.Biotech</li>
+		<li>brrainz.harmony</li>
+		<li>OskarPotocki.VanillaFactionsExpanded.Core</li>
+		<li>RedMattis.BetterPrerequisites</li>
+		<li>Dubwise.Rimatomics</li>
+		<li>dubwise.dubsbadhygiene</li>
+		<li>ceteam.combatextended</li>
+		<li>Katavrik.CrashLanding</li>
+		<li>Phonicmas.40kCore</li>
+	</loadAfter>
+</ModMetaData>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <!-- Gene Category -->
+    <!-- Chaos -->
+    <GeneCategoryDef>
+        <defName>BEWHAbhumans</defName>
+        <label>abhuman</label>
+        <displayPriorityInXenotype>541</displayPriorityInXenotype>
+    </GeneCategoryDef>
+
+    <!-- Parent Genes -->
+    <!-- Squat Base -->
+    <GeneDef Name="BEWH_Squat" Abstract="True">
+        <displayCategory>BEWHAbhumans</displayCategory>
+        <marketValueFactor>1</marketValueFactor>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>-1</biostatMet>
+        <canGenerateInGeneSet>false</canGenerateInGeneSet>
+    </GeneDef>
+
+</Defs>
