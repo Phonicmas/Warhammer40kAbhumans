@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <XenotypeDef>
+        <defName>BEWH_Squat</defName>
+        <label>squat</label>
+        <description>Squats (Homo sapiens rotundus) are short, stocky and physically hardy Abhumans.</description>
+        <iconPath>UI/Xenotypes/SquatXenoIcon</iconPath>
+        <inheritable>true</inheritable>
+        <canGenerateAsCombatant>true</canGenerateAsCombatant>
+        <factionlessGenerationWeight>0.5</factionlessGenerationWeight>
+        <genes>
+            <li>BEWH_SquatDwarvenStature</li>
+            <li>BEWH_SquatGrudgy</li>
+            <li>BEWH_SquatSturdyBuild</li>
+            <li>BEWH_SquatTactless</li>
+            <li>BEWH_SquatLongLiving</li>
+            <li>BEWH_SquatForgeAdept</li>
+            <li>BEWH_SquatNaturalEngineer</li>
+            <li>BEWH_SquatStonecunning</li>
+            <li>AptitudeStrong_Mining</li>
+            <li>AptitudePoor_Animals</li>
+            <li>AptitudeTerrible_Plants</li>
+            <li>Mood_Pessimist</li>
+            <li>Beard_Always</li>
+        </genes>
+    </XenotypeDef>
+
+</Defs>

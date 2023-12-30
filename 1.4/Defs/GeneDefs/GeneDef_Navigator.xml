@@ -1,6 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-
+    <!-- Navigator: Warp Eye -->
+    <GeneDef ParentName="BEWH_Navigator">
+        <defName>BEWH_NavigtorWarpEye</defName>
+        <label>warp eye</label>
+        <description>Carriers of this gene posses a third eye that allows them to perceive the "psychic light" projected by the Astronomican.</description>
+        <iconPath>UI/Genes/WarpEye</iconPath>
+        <geneClass>Core40k.Gene_GiveVFECoreAbility</geneClass>
+        <biostatCpx>5</biostatCpx>
+        <biostatMet>-4</biostatMet>
+        <displayOrderInCategory>11</displayOrderInCategory>
+        <statFactors>
+            <MeditationFocusGain>1.5</MeditationFocusGain>
+        </statFactors>
+        <statOffsets>
+            <PsychicSensitivity>0.6</PsychicSensitivity>
+            <PsychicEntropyRecoveryRate>0.4</PsychicEntropyRecoveryRate>
+        </statOffsets>
+        <capMods>
+            <li>
+                <capacity>Consciousness</capacity>
+                <offset>0.25</offset>
+            </li>
+            <li>
+                <capacity>Sight</capacity>
+                <offset>0.5</offset>
+            </li>
+        </capMods>
+        <customEffectDescriptions>
+            <li>Gives ability: Warp travel</li>
+        </customEffectDescriptions>
+        <abilities>
+            <li>BEWH_WarpEyeGaze</li>
+        </abilities>
+        <descriptionHyperlinks>
+            <AbilityDef>BEWH_WarpEyeGaze</AbilityDef>
+            <VFECore.Abilities.AbilityDef>BEWH_WarpEyeWarpTravel</VFECore.Abilities.AbilityDef>
+        </descriptionHyperlinks>
+        <graphicData>
+            <graphicPath>Things/Pawn/Humanlike/Navigator/HeadAttachments/WarpEye/WarpEye</graphicPath>
+            <layer>PostSkin</layer>
+            <drawLoc>HeadMiddle</drawLoc>
+            <drawOffsetSouth>(0, 0, -0.02)</drawOffsetSouth>
+        </graphicData>
+        <modExtensions>
+            <li Class="Core40k.DefModExtension_GivesVFEAbility">
+                <abilityDefs>
+                    <li>BEWH_WarpEyeWarpTravel</li>
+                </abilityDefs>
+            </li>
+        </modExtensions>
+    </GeneDef>
+    <!-- Navigator: Extended Life -->
+    <GeneDef ParentName="BEWH_Navigator">
+        <defName>BEWH_NavigtorExtendedLife</defName>
+        <label>extended life</label>
+        <description>Carriers of this gene live to very long compared to baseliners.</description>
+        <iconPath>UI/Genes/ExtendedLife</iconPath>
+        <biostatCpx>2</biostatCpx>
+        <biostatMet>-1</biostatMet>
+        <displayOrderInCategory>12</displayOrderInCategory>
+        <biologicalAgeTickFactorFromAgeCurve>
+            <points>
+                <li>(18, 0.1)</li>
+            </points>
+        </biologicalAgeTickFactorFromAgeCurve>
+    </GeneDef>
+    <!-- Navigator: Warp Close -->
+    <GeneDef ParentName="BEWH_Navigator">
+        <defName>BEWH_NavigtorWarpClose</defName>
+        <label>warp close</label>
+        <description>Carriers of this gene have a stronger connection to the warp and are more likely to suffer its effects.</description>
+        <iconPath>UI/Genes/WarpClose</iconPath>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>3</biostatMet>
+        <displayOrderInCategory>13</displayOrderInCategory>
+        <statFactors>
+            <CancerRate>4</CancerRate>
+            <ImmunityGainSpeed>0.9</ImmunityGainSpeed>
+            <Fertility>0.75</Fertility>
+        </statFactors>
+    </GeneDef>
 
 </Defs>

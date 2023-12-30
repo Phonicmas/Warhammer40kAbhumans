@@ -1,6 +1,172 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-
-
+    <!-- Goliath: Large Stature -->
+    <GeneDef ParentName="BEWH_Goliath">
+        <defName>BEWH_GoliathGiantStature</defName>
+        <label>giant stature</label>
+        <description>Carriers of this gene are giant in stature.</description>
+        <iconPath>UI/Genes/GiantStature</iconPath>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>0</biostatMet>
+        <displayOrderInCategory>41</displayOrderInCategory>
+        <statFactors>
+            <LeatherAmount>1.45</LeatherAmount>
+            <MeatAmount>1.45</MeatAmount>
+            <Mass>1.45</Mass>
+        </statFactors>
+        <missingGeneRomanceChanceFactor>0.5</missingGeneRomanceChanceFactor>
+        <customEffectDescriptions>
+            <li>Increased Size</li>
+        </customEffectDescriptions>
+        <modExtensions>
+            <li Class="VanillaGenesExpanded.GeneExtension">
+                <bodyScaleFactor>(1.45, 1.45)</bodyScaleFactor>
+                <headScaleFactor>(1.45, 1.45)</headScaleFactor>
+            </li>
+        </modExtensions>
+        <exclusionTags>
+            <li>Body_Size_Multiplier</li>
+        </exclusionTags>
+    </GeneDef>
+    <!-- Goliath: Genetically Strong -->
+    <GeneDef ParentName="BEWH_Goliath">
+        <defName>BEWH_GoliathGeneticallyStrengthened</defName>
+        <label>genetically strengthened</label>
+        <description>Carriers of this gene have been genetically strengthened.</description>
+        <iconPath>UI/Genes/GeneticallyStrong</iconPath>
+        <biostatCpx>3</biostatCpx>
+        <biostatMet>-4</biostatMet>
+        <displayOrderInCategory>42</displayOrderInCategory>
+        <statOffsets>
+            <CarryingCapacity>240</CarryingCapacity>
+        </statOffsets>
+        <statFactors>
+            <MeleeDamageFactor>4</MeleeDamageFactor>
+        </statFactors>
+        <aptitudes>
+            <Melee>5</Melee>
+        </aptitudes>
+        <modExtensions>
+            <li Class="VanillaGenesExpanded.GeneExtension">
+                <caravanCarryingFactor>3</caravanCarryingFactor>
+            </li>
+        </modExtensions>
+    </GeneDef>
+    <!-- Goliath: Genetically Tough -->
+    <GeneDef ParentName="BEWH_Goliath">
+        <defName>BEWH_GoliathGeneticallyToughened</defName>
+        <label>genetically toughened</label>
+        <description>Carriers of this gene have been genetically toughened.</description>
+        <iconPath>UI/Genes/GeneticallyTough</iconPath>
+        <biostatCpx>3</biostatCpx>
+        <biostatMet>-3</biostatMet>
+        <displayOrderInCategory>43</displayOrderInCategory>
+        <statFactors>
+            <StaggerDurationFactor>0.15</StaggerDurationFactor>
+        </statFactors>
+        <statOffsets>
+            <ComfyTemperatureMin>-10</ComfyTemperatureMin>
+            <ComfyTemperatureMax>40</ComfyTemperatureMax>
+        </statOffsets>
+        <forcedTraits>
+            <li>
+                <def>Tough</def>
+            </li>
+        </forcedTraits>
+        <suppressedTraits>
+            <li>
+                <def>Wimp</def>
+            </li>
+        </suppressedTraits>
+        <painFactor>0.65</painFactor>
+    </GeneDef>
+    <!-- Goliath: Genetically Slow -->
+    <GeneDef ParentName="BEWH_Goliath">
+        <defName>BEWH_GoliathGeneticallySlow</defName>
+        <label>genetically slow</label>
+        <description>Carriers of this gene are slower than their baseliner due to mishaps in gene-smithing.</description>
+        <iconPath>UI/Genes/GeneticallySlow</iconPath>
+        <biostatCpx>2</biostatCpx>
+        <biostatMet>4</biostatMet>
+        <displayOrderInCategory>44</displayOrderInCategory>
+        <statFactors>
+            <MeleeWeapon_CooldownMultiplier>2</MeleeWeapon_CooldownMultiplier>
+            <MoveSpeed>0.65</MoveSpeed>
+        </statFactors>
+    </GeneDef>
+    <!-- Goliath: Genetic Aptitude -->
+    <GeneDef ParentName="BEWH_Goliath">
+        <defName>BEWH_GoliathGeneticAptitude</defName>
+        <label>genetic aptitude</label>
+        <description>Carriers of this gene are born with aptitude for various things due to gene-smithing.</description>
+        <iconPath>UI/Genes/GeneticAptitude</iconPath>
+        <biostatCpx>3</biostatCpx>
+        <biostatMet>-3</biostatMet>
+        <displayOrderInCategory>45</displayOrderInCategory>
+        <aptitudes>
+            <Crafting>8</Crafting>
+            <Construction>8</Construction>
+            <Mining>3</Mining>
+            <Cooking>3</Cooking>
+            <Plants>3</Plants>
+        </aptitudes>
+        <statFactors>
+            <SmeltingSpeed>2</SmeltingSpeed>
+        </statFactors>
+    </GeneDef>
+    <!-- Goliath: Fleeting Lifespan-->
+    <GeneDef ParentName="BEWH_Goliath">
+        <defName>BEWH_GoliathFleetingLifespan</defName>
+        <label>fleeting lifespan</label>
+        <description>Carriers of this gene are overengineed and possess and very low lifespan and low fertility.</description>
+        <iconPath>UI/Genes/FleetingLifespan</iconPath>
+        <biostatCpx>2</biostatCpx>
+        <biostatMet>2</biostatMet>
+        <displayOrderInCategory>46</displayOrderInCategory>
+        <biologicalAgeTickFactorFromAgeCurve>
+            <points>
+                <li>(0, 12)</li>
+                <li>(11, 4)</li>
+            </points>
+        </biologicalAgeTickFactorFromAgeCurve>
+        <statFactors>
+            <LifespanFactor>0.4</LifespanFactor>
+            <Fertility>0.25</Fertility>
+        </statFactors>
+    </GeneDef>
+    <!-- Goliath: Mental Instability -->
+    <GeneDef ParentName="BEWH_Goliath">
+        <defName>BEWH_GoliathMentalInstability</defName>
+        <label>mental instability</label>
+        <description>Carriers of this gene are mentally unstable due to their heavy gene-smithing.</description>
+        <iconPath>UI/Genes/MentalInstability</iconPath>
+        <biostatCpx>2</biostatCpx>
+        <biostatMet>3</biostatMet>
+        <displayOrderInCategory>47</displayOrderInCategory>
+        <mentalBreakMtbDays>1.5</mentalBreakMtbDays>
+        <mentalBreakDef>Tantrum</mentalBreakDef>
+        <statFactors>
+            <GlobalLearningFactor>0.8</GlobalLearningFactor>
+        </statFactors>
+    </GeneDef>
+    <!-- Goliath: Male Dominant -->
+    <GeneDef ParentName="BEWH_Goliath">
+        <defName>BEWH_GoliathMaleDominant</defName>
+        <label>male dominant</label>
+        <description>Carriers of this gene are often born as male.</description>
+        <iconPath>UI/Genes/MaleDominant</iconPath>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>0</biostatMet>
+        <displayOrderInCategory>48</displayOrderInCategory>
+        <customEffectDescriptions>
+            <li>90% are born as males</li>
+        </customEffectDescriptions>
+        <modExtensions>
+            <li Class="Core40k.DefModExtension_GenderDistribution">
+                <female>10</female>
+                <male>90</male>
+            </li>
+        </modExtensions>
+    </GeneDef>
 </Defs>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <XenotypeDef>
+        <defName>BEWH_Nightsider</defName>
+        <label>nightsider</label>
+        <description>Nightsiders (Homo Sapiens Tenebris) have evolved on worlds or parts of planets shrouded in darkness, Nightsiders have a variety of particular attributes including echolocation, tapetal reflexes which allow them to see almost in total darkness.</description>
+        <iconPath>UI/Xenotypes/NightsiderXenoIcon</iconPath>
+        <inheritable>true</inheritable>
+        <canGenerateAsCombatant>true</canGenerateAsCombatant>
+        <factionlessGenerationWeight>0.3</factionlessGenerationWeight>
+        <genes>
+            <li>BEWH_NavigtorWarpEye</li>
+            <li>BEWH_NightsiderOtherwordly</li>
+            <li>Skin_SlateGray</li>
+            <li>Skin_LightGray</li>
+            <li>Skin_SheerWhite</li>
+            <li>Skin_InkBlack</li>
+        </genes>
+    </XenotypeDef>
+
+</Defs>

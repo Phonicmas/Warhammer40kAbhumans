@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <XenotypeDef>
+        <defName>BEWH_Goliath</defName>
+        <label>goliath</label>
+        <description>Goliaths are unique among the peoples of Necromunda, forged from a stable genus of humanity but enhanced for strength and endurance. This had let them to become incredibly strong and tough, but often mentally unbalanced and extremely short-lived.</description>
+        <iconPath>UI/Xenotypes/GoliathXenoIcon</iconPath>
+        <inheritable>false</inheritable>
+        <canGenerateAsCombatant>false</canGenerateAsCombatant>
+        <factionlessGenerationWeight>0.15</factionlessGenerationWeight>
+        <genes>
+            <li>BEWH_GoliathGiantStature</li>
+            <li>BEWH_GoliathGeneticallyStrengthened</li>
+            <li>BEWH_GoliathGeneticallyToughened</li>
+            <li>BEWH_GoliathGeneticallySlow</li>
+            <li>BEWH_GoliathFleetingLifespan</li>
+            <li>BEWH_GoliathGeneticAptitude</li>
+            <li>BEWH_GoliathMentalInstability</li>
+            <li>BEWH_GoliathMaleDominant</li>
+            <li>Body_Hulk</li>
+            <li>Jaw_Heavy</li>
+            <li>Hair_BaldOnly</li>
+            <li>Hair_ShortOnly</li>
+        </genes>
+    </XenotypeDef>
+
+</Defs>

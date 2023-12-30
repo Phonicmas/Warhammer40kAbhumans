@@ -1,6 +1,238 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-
+    <!-- Beastman: Large Stature -->
+    <GeneDef ParentName="BEWH_Beastman">
+        <defName>BEWH_BeastmanLargeStature</defName>
+        <label>large stature</label>
+        <description>Carriers of this gene are large in stature.</description>
+        <iconPath>UI/Genes/LargeStature</iconPath>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>0</biostatMet>
+        <displayOrderInCategory>61</displayOrderInCategory>
+        <statFactors>
+            <LeatherAmount>1.1</LeatherAmount>
+            <MeatAmount>1.1</MeatAmount>
+            <Mass>1.1</Mass>
+        </statFactors>
+        <customEffectDescriptions>
+            <li>Increased Size</li>
+        </customEffectDescriptions>
+        <modExtensions>
+            <li Class="VanillaGenesExpanded.GeneExtension">
+                <bodyScaleFactor>(1.1, 1.1)</bodyScaleFactor>
+                <headScaleFactor>(1.1, 1.1)</headScaleFactor>
+            </li>
+        </modExtensions>
+        <exclusionTags>
+            <li>Body_Size_Multiplier</li>
+        </exclusionTags>
+    </GeneDef>
+    <!-- Beastman: Goat Head -->
+    <GeneDef ParentName="BEWH_Beastman">
+        <defName>BEWH_BeastmanGoatHead</defName>
+        <label>goat head</label>
+        <description>Carriers of this gene head resemble that of a goat.</description>
+        <iconPath>UI/Genes/GoatHead</iconPath>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>0</biostatMet>
+        <displayOrderInCategory>62</displayOrderInCategory>
+        <forcedHeadTypes>
+            <li>BEWH_BeastmanHead</li>
+        </forcedHeadTypes>
+    </GeneDef>
+    <!-- Beastman: Hairy Body -->
+    <GeneDef ParentName="BEWH_Beastman">
+        <defName>BEWH_BeastmanHairyBody</defName>
+        <label>hairy body</label>
+        <description>Carriers of this gene have hair covered large portion of their body.</description>
+        <iconPath>UI/Genes/HairyBody</iconPath>
+        <biostatCpx>2</biostatCpx>
+        <biostatMet>-1</biostatMet>
+        <displayOrderInCategory>63</displayOrderInCategory>
+        <skinColorOverride>(124, 67, 27)</skinColorOverride>
+        <statOffsets>
+            <ComfyTemperatureMin>-10</ComfyTemperatureMin>
+        </statOffsets>
+        <statFactors>
+            <IncomingDamageFactor>0.85</IncomingDamageFactor>
+        </statFactors>
+        <damageFactors>
+            <Flame>1.4</Flame>
+        </damageFactors>
+        <missingGeneRomanceChanceFactor>0.4</missingGeneRomanceChanceFactor>
+        <exclusionTags>
+            <li>Fur</li>
+        </exclusionTags>
+        <graphicData>
+            <fur>Furskin</fur>
+        </graphicData>
+        <modExtensions>
+            <li Class="VanillaGenesExpanded.GeneExtension">
+                <useSkinColorForFur>true</useSkinColorForFur>
+            </li>
+        </modExtensions>
+    </GeneDef>
+    <!-- Beastman: Hooved -->
+    <GeneDef ParentName="BEWH_Beastman">
+        <defName>BEWH_BeastmanHooved</defName>
+        <label>hooved</label>
+        <description>Carriers of this gene have hooves for legs, allowing them to run at greater speed.</description>
+        <iconPath>UI/Genes/Hooved</iconPath>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>-1</biostatMet>
+        <displayOrderInCategory>64</displayOrderInCategory>
+        <statOffsets>
+            <MoveSpeed>0.6</MoveSpeed>
+        </statOffsets>
+        <conditionalStatAffecters>
+            <li Class="ConditionalStatAffecter_Clothed">
+                <statOffsets>
+                    <MoveSpeed>-0.2</MoveSpeed>
+                </statOffsets>
+            </li>
+            <li Class="ConditionalStatAffecter_Unclothed">
+                <statOffsets>
+                    <MoveSpeed>0.2</MoveSpeed>
+                </statOffsets>
+            </li>
+        </conditionalStatAffecters>
+    </GeneDef>
+    <!-- Beastman: Innate Bloodlust -->
+    <GeneDef ParentName="BEWH_Beastman">
+        <defName>BEWH_BeastmanInnateBloodlust</defName>
+        <label>innate bloodlust</label>
+        <description>Carriers of this gene have an innate bloodlust.</description>
+        <iconPath>UI/Genes/InnateBloodthirst</iconPath>
+        <biostatCpx>2</biostatCpx>
+        <biostatMet>2</biostatMet>
+        <displayOrderInCategory>65</displayOrderInCategory>
+        <socialFightChanceFactor>1.4</socialFightChanceFactor>
+        <aggroMentalBreakSelectionChanceFactor>3</aggroMentalBreakSelectionChanceFactor>
+        <prisonBreakMTBFactor>0.4</prisonBreakMTBFactor>
+        <causesNeed>KillThirst</causesNeed>
+        <statFactors>
+            <MeleeDamageFactor>1.6</MeleeDamageFactor>
+        </statFactors>
+        <aptitudes>
+            <Melee>5</Melee>
+        </aptitudes>
+        <suppressedTraits>
+            <li>
+                <def>Wimp</def>
+            </li>
+            <li>
+                <def>Kind</def>
+            </li>
+        </suppressedTraits>
+        <minAgeActive>15</minAgeActive>
+        <exclusionTags>
+            <li>KillThirst</li>
+        </exclusionTags>
+    </GeneDef>
+    <!-- Beastman: Chaos Connections -->
+    <GeneDef ParentName="BEWH_Beastman">
+        <defName>BEWH_BeastmanChaosConnection</defName>
+        <label>goat head</label>
+        <description>Carriers of this gene have a closer connection to the warp.</description>
+        <iconPath>UI/Genes/ChaosConnection</iconPath>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>1</biostatMet>
+        <displayOrderInCategory>66</displayOrderInCategory>
+        <statOffsets>
+            <PsychicSensitivity>0.2</PsychicSensitivity>
+        </statOffsets>
+    </GeneDef>
+    <!-- Beastman: Male Favoured -->
+    <GeneDef ParentName="BEWH_Beastman">
+        <defName>BEWH_BeastmanMaleFavoured</defName>
+        <label>male favoured</label>
+        <description>Carriers of this gene tend to be born as male.</description>
+        <iconPath>UI/Genes/MaleFavoured</iconPath>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>0</biostatMet>
+        <displayOrderInCategory>67</displayOrderInCategory>
+        <customEffectDescriptions>
+            <li>75% are born as males</li>
+        </customEffectDescriptions>
+        <modExtensions>
+            <li Class="Core40k.DefModExtension_GenderDistribution">
+                <female>25</female>
+                <male>75</male>
+            </li>
+        </modExtensions>
+    </GeneDef>
+    <!-- Beastman: Horned -->
+    <GeneDef ParentName="BEWH_Beastman">
+        <defName>BEWH_BeastmanHorned</defName>
+        <label>horned</label>
+        <description>Carriers of this gene have horns that can be used as a weapon.</description>
+        <iconPath>UI/Genes/Horned</iconPath>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>-1</biostatMet>
+        <displayOrderInCategory>68</displayOrderInCategory>
+        <exclusionTags>
+            <li>Horn</li>
+            <li>Horns</li>
+        </exclusionTags>
+        <graphicData>
+            <graphicPath>Things/Pawn/Humanlike/Beastman/HeadAttachments/Horns/BeastmanHorns</graphicPath>
+            <colorType>Custom</colorType>
+            <color>
+                <r>0.5</r>
+                <g>0.5</g>
+                <b>0.5</b>
+                <a>1</a>
+            </color>
+            <layer>PostHeadgear</layer>
+            <drawLoc>HeadTop</drawLoc>
+        </graphicData>
+        <customEffectDescriptions>
+            <li>Gives a horn attack</li>
+        </customEffectDescriptions>
+        <modExtensions>
+            <li Class="VanillaGenesExpanded.GeneExtension">
+                <hediffsToBodyParts>
+                    <li>
+                        <hediff>BEWH_BeastmanHornAttack</hediff>
+                        <bodyparts>
+                            <li>Head</li>
+                        </bodyparts>
+                    </li>
+                </hediffsToBodyParts>
+                <forGenderOnly>Male</forGenderOnly>
+            </li>
+        </modExtensions>
+    </GeneDef>
+    <!-- Beastman: Hornless -->
+    <GeneDef ParentName="BEWH_Beastman">
+        <defName>BEWH_BeastmanHornless</defName>
+        <label>hornless</label>
+        <description>Carriers of this gene have no horns, while not as effective as ramming with horns, they can stil ram enemies with their bare head.</description>
+        <iconPath>UI/Genes/Hornless</iconPath>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>-1</biostatMet>
+        <displayOrderInCategory>69</displayOrderInCategory>
+        <exclusionTags>
+            <li>Horn</li>
+            <li>Horns</li>
+        </exclusionTags>
+        <customEffectDescriptions>
+            <li>Gives a head bash attack</li>
+        </customEffectDescriptions>
+        <modExtensions>
+            <li Class="VanillaGenesExpanded.GeneExtension">
+                <hediffsToBodyParts>
+                    <li>
+                        <hediff>BEWH_BeastmanHornStumpAttack</hediff>
+                        <bodyparts>
+                            <li>Head</li>
+                        </bodyparts>
+                    </li>
+                </hediffsToBodyParts>
+                <forGenderOnly>Female</forGenderOnly>
+            </li>
+        </modExtensions>
+    </GeneDef>
 
 </Defs>

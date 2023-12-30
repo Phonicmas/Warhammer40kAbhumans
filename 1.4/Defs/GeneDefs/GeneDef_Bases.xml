@@ -2,7 +2,7 @@
 <Defs>
 
     <!-- Gene Category -->
-    <!-- Chaos -->
+    <!-- Abhuman -->
     <GeneCategoryDef>
         <defName>BEWHAbhumans</defName>
         <label>abhuman</label>
@@ -10,12 +10,46 @@
     </GeneCategoryDef>
 
     <!-- Parent Genes -->
+    <!-- Ratling Base -->
+    <GeneDef Name="BEWH_Ratling" Abstract="True">
+        <displayCategory>BEWHAbhumans</displayCategory>
+        <marketValueFactor>1</marketValueFactor>
+        <canGenerateInGeneSet>false</canGenerateInGeneSet>
+    </GeneDef>
+    <!-- Ogryn Base -->
+    <GeneDef Name="BEWH_Ogryn" Abstract="True">
+        <displayCategory>BEWHAbhumans</displayCategory>
+        <marketValueFactor>1</marketValueFactor>
+        <canGenerateInGeneSet>false</canGenerateInGeneSet>
+    </GeneDef>
     <!-- Squat Base -->
     <GeneDef Name="BEWH_Squat" Abstract="True">
         <displayCategory>BEWHAbhumans</displayCategory>
         <marketValueFactor>1</marketValueFactor>
-        <biostatCpx>1</biostatCpx>
-        <biostatMet>-1</biostatMet>
+        <canGenerateInGeneSet>false</canGenerateInGeneSet>
+    </GeneDef>
+    <!-- Navigator Base -->
+    <GeneDef Name="BEWH_Navigator" Abstract="True">
+        <displayCategory>BEWHAbhumans</displayCategory>
+        <marketValueFactor>1</marketValueFactor>
+        <canGenerateInGeneSet>false</canGenerateInGeneSet>
+    </GeneDef>
+    <!-- Nightsider Base -->
+    <GeneDef Name="BEWH_Nightsider" Abstract="True">
+        <displayCategory>BEWHAbhumans</displayCategory>
+        <marketValueFactor>1</marketValueFactor>
+        <canGenerateInGeneSet>false</canGenerateInGeneSet>
+    </GeneDef>
+    <!-- Goliath Base -->
+    <GeneDef Name="BEWH_Goliath" Abstract="True">
+        <displayCategory>BEWHAbhumans</displayCategory>
+        <marketValueFactor>1</marketValueFactor>
+        <canGenerateInGeneSet>false</canGenerateInGeneSet>
+    </GeneDef>
+    <!-- Goliath Base -->
+    <GeneDef Name="BEWH_Beastman" Abstract="True">
+        <displayCategory>BEWHAbhumans</displayCategory>
+        <marketValueFactor>1</marketValueFactor>
         <canGenerateInGeneSet>false</canGenerateInGeneSet>
     </GeneDef>
 

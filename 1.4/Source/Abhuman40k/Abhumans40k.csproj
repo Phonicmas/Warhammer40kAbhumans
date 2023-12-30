@@ -75,6 +75,12 @@
   <ItemGroup>
     <Compile Include="Abhumans40kMod.cs" />
     <Compile Include="Abhumans40kDefOf.cs" />
+    <Compile Include="CompAbilityEffect_WarpEyeGaze.cs" />
+    <Compile Include="Ability_WarpEyeWarpTravel.cs" />
+    <Compile Include="CompProperties_AbilityWarpEyeGaze.cs" />
+    <Compile Include="Hediff_StuntedIntelligenceEnhancer.cs" />
+    <Compile Include="ThoughtWorker_Nightsider.cs" />
+    <Compile Include="HarmonyPatch_Grudge.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

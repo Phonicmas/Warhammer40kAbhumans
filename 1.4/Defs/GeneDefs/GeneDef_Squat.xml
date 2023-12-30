@@ -1,6 +1,181 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-
+    <!-- Squat: dwarven Stature -->
+    <GeneDef ParentName="BEWH_Squat">
+        <defName>BEWH_SquatDwarvenStature</defName>
+        <label>dwarven stature</label>
+        <description>Carriers of this gene are short in stature.</description>
+        <iconPath>UI/Genes/DwarvenStature</iconPath>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>0</biostatMet>
+        <displayOrderInCategory>31</displayOrderInCategory>
+        <statFactors>
+            <LeatherAmount>0.85</LeatherAmount>
+            <MeatAmount>0.85</MeatAmount>
+            <Mass>0.85</Mass>
+        </statFactors>
+        <missingGeneRomanceChanceFactor>0.5</missingGeneRomanceChanceFactor>
+        <customEffectDescriptions>
+            <li>Decreased Size</li>
+        </customEffectDescriptions>
+        <modExtensions>
+            <li Class="VanillaGenesExpanded.GeneExtension">
+                <bodyScaleFactor>(0.85, 0.85)</bodyScaleFactor>
+                <headScaleFactor>(0.85, 0.85)</headScaleFactor>
+            </li>
+        </modExtensions>
+        <exclusionTags>
+            <li>Body_Size_Multiplier</li>
+        </exclusionTags>
+    </GeneDef>
+    <!-- Squat: Grudgy -->
+    <GeneDef ParentName="BEWH_Squat">
+        <defName>BEWH_SquatGrudgy</defName>
+        <label>grudgy</label>
+        <description>Carriers of this gene have good memory and tend to remember who wronged them.</description>
+        <iconPath>UI/Genes/Grudgy</iconPath>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>2</biostatMet>
+        <displayOrderInCategory>32</displayOrderInCategory>
+        <customEffectDescriptions>
+            <li>Negative social interactions memories lasts twice as long.</li>
+        </customEffectDescriptions>
+    </GeneDef>
+    <!-- Squat: Tactless -->
+    <GeneDef ParentName="BEWH_Squat">
+        <defName>BEWH_SquatTactless</defName>
+        <label>tactless</label>
+        <description>Carriers of this gene are not very diplomatic by nature, and tend to say things bluntly.</description>
+        <iconPath>UI/Genes/Tactless</iconPath>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>2</biostatMet>
+        <displayOrderInCategory>33</displayOrderInCategory>
+        <aptitudes>
+            <Social>-4</Social>
+        </aptitudes>
+        <statFactors>
+            <SocialImpact>0.7</SocialImpact>
+            <NegotiationAbility>0.35</NegotiationAbility>
+            <TradePriceImprovement>0.5</TradePriceImprovement>
+            <DrugSellPriceImprovement>0.5</DrugSellPriceImprovement>
+        </statFactors>
+    </GeneDef>
+    <!-- Squat: Sturdy Build -->
+    <GeneDef ParentName="BEWH_Squat">
+        <defName>BEWH_SquatSturdyBuild</defName>
+        <label>sturdy build</label>
+        <description>Carriers of this gene are rather sturdy and strong.</description>
+        <iconPath>UI/Genes/SturdyBuild</iconPath>
+        <biostatCpx>2</biostatCpx>
+        <biostatMet>-2</biostatMet>
+        <displayOrderInCategory>34</displayOrderInCategory>
+        <statOffsets>
+            <CarryingCapacity>75</CarryingCapacity>
+            <ArmorRating_Blunt>0.1</ArmorRating_Blunt>
+            <ArmorRating_Sharp>0.1</ArmorRating_Sharp>
+        </statOffsets>
+        <statFactors>
+            <MeleeDamageFactor>1.3</MeleeDamageFactor>
+            <StaggerDurationFactor>0.85</StaggerDurationFactor>
+        </statFactors>
+        <painFactor>0.8</painFactor>
+        <modExtensions>
+            <li Class="VanillaGenesExpanded.GeneExtension">
+                <caravanCarryingFactor>2</caravanCarryingFactor>
+            </li>
+        </modExtensions>
+        <exclusionTags>
+            <li>MeleeDamage</li>
+            <li>Pain</li>
+            <li>WoundHealingRate</li>
+            <li>Toughness</li>
+        </exclusionTags>
+    </GeneDef>
+    <!-- Squat: Long Living -->
+    <GeneDef ParentName="BEWH_Squat">
+        <defName>BEWH_SquatLongLiving</defName>
+        <label>long living</label>
+        <description>Carriers of this gene have a long livespan compared to normal baselienrs.</description>
+        <iconPath>UI/Genes/LongLiving</iconPath>
+        <biostatCpx>2</biostatCpx>
+        <biostatMet>-1</biostatMet>
+        <displayOrderInCategory>35</displayOrderInCategory>
+        <biologicalAgeTickFactorFromAgeCurve>
+            <points>
+                <li>(18, 0.25)</li>
+            </points>
+        </biologicalAgeTickFactorFromAgeCurve>
+    </GeneDef>
+    <!-- Squat: Natural Engineer -->
+    <GeneDef ParentName="BEWH_Squat">
+        <defName>BEWH_SquatNaturalEngineer</defName>
+        <label>natural engineer</label>
+        <description>Carriers of this gene are natural engineers, being able to operate machinery with fine dexterity.</description>
+        <iconPath>UI/Genes/NaturalEngineer</iconPath>
+        <biostatCpx>2</biostatCpx>
+        <biostatMet>-3</biostatMet>
+        <displayOrderInCategory>36</displayOrderInCategory>
+        <capMods>
+            <li>
+                <capacity>Manipulation</capacity>
+                <postFactor>1.15</postFactor>
+            </li>
+        </capMods>
+        <statFactors>
+            <FixBrokenDownBuildingSuccessChance>1.5</FixBrokenDownBuildingSuccessChance>
+            <ButcheryMechanoidEfficiency>1.35</ButcheryMechanoidEfficiency>
+        </statFactors>
+        <aptitudes>
+            <Crafting>6</Crafting>
+            <Construction>4</Construction>
+        </aptitudes>
+        <passionMod>
+            <skill>Crafting</skill>
+            <modType>AddOneLevel</modType>
+        </passionMod>
+    </GeneDef>
+    <!-- Squat: Forge Adept -->
+    <GeneDef ParentName="BEWH_Squat">
+        <defName>BEWH_SquatForgeAdept</defName>
+        <label>forge adept</label>
+        <description>Carriers of this gene are adept at using the forge and used to its heat.</description>
+        <iconPath>UI/Genes/ForgeAdept</iconPath>
+        <biostatCpx>2</biostatCpx>
+        <biostatMet>-1</biostatMet>
+        <displayOrderInCategory>37</displayOrderInCategory>
+        <damageFactors>
+            <Flame>0.25</Flame>
+        </damageFactors>
+        <statFactors>
+            <SmeltingSpeed>2</SmeltingSpeed>
+        </statFactors>
+        <statOffsets>
+            <ArmorRating_Heat>0.15</ArmorRating_Heat>
+            <ComfyTemperatureMax>20</ComfyTemperatureMax>
+        </statOffsets>
+    </GeneDef>
+    <!-- Squat: Stonecunning -->
+    <GeneDef ParentName="BEWH_Squat">
+        <defName>BEWH_SquatStonecunning</defName>
+        <label>stonecunning</label>
+        <description>Carriers of this gene feel at home underground and knows their way around rock and minerals, allowing them to quickly excavate without waste.</description>
+        <iconPath>UI/Genes/Stonecunning</iconPath>
+        <biostatCpx>2</biostatCpx>
+        <biostatMet>-2</biostatMet>
+        <displayOrderInCategory>38</displayOrderInCategory>
+        <statFactors>
+            <MiningSpeed>1.5</MiningSpeed>
+            <DeepDrillingSpeed>1.5</DeepDrillingSpeed>
+        </statFactors>
+        <statOffsets>
+            <MiningYield>0.5</MiningYield>
+        </statOffsets>
+        <forcedTraits>
+            <li>
+                <def>Undergrounder</def>
+            </li>
+        </forcedTraits>
+    </GeneDef>
 
 </Defs>
