@@ -131,7 +131,12 @@
             <DrugSellPriceImprovement>0.1</DrugSellPriceImprovement>
             <GlobalLearningFactor>0.35</GlobalLearningFactor>
         </statFactors>
-        <disabledWorkTags>ManualSkilled</disabledWorkTags>
+        <!--<disabledWorkTags>ManualSkilled</disabledWorkTags>-->
+        <forcedTraits>
+            <li>
+                <def>BEWH_OgrynStuntedIntellect</def>
+            </li>
+        </forcedTraits>
         <exclusionTags>
             <li>Learning</li>
         </exclusionTags>

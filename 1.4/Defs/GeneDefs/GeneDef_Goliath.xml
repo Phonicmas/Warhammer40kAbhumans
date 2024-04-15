@@ -36,13 +36,13 @@
         <description>Carriers of this gene have been genetically strengthened.</description>
         <iconPath>UI/Genes/GeneticallyStrong</iconPath>
         <biostatCpx>3</biostatCpx>
-        <biostatMet>-4</biostatMet>
+        <biostatMet>-6</biostatMet>
         <displayOrderInCategory>42</displayOrderInCategory>
         <statOffsets>
             <CarryingCapacity>240</CarryingCapacity>
         </statOffsets>
         <statFactors>
-            <MeleeDamageFactor>4</MeleeDamageFactor>
+            <MeleeDamageFactor>3.5</MeleeDamageFactor>
         </statFactors>
         <aptitudes>
             <Melee>5</Melee>
@@ -122,7 +122,7 @@
         <description>Carriers of this gene are overengineed and possess and very low lifespan and low fertility.</description>
         <iconPath>UI/Genes/FleetingLifespan</iconPath>
         <biostatCpx>2</biostatCpx>
-        <biostatMet>2</biostatMet>
+        <biostatMet>3</biostatMet>
         <displayOrderInCategory>46</displayOrderInCategory>
         <biologicalAgeTickFactorFromAgeCurve>
             <points>
@@ -142,12 +142,12 @@
         <description>Carriers of this gene are mentally unstable due to their heavy gene-smithing.</description>
         <iconPath>UI/Genes/MentalInstability</iconPath>
         <biostatCpx>2</biostatCpx>
-        <biostatMet>3</biostatMet>
+        <biostatMet>4</biostatMet>
         <displayOrderInCategory>47</displayOrderInCategory>
-        <mentalBreakMtbDays>1.5</mentalBreakMtbDays>
+        <mentalBreakMtbDays>3.5</mentalBreakMtbDays>
         <mentalBreakDef>Tantrum</mentalBreakDef>
         <statFactors>
-            <GlobalLearningFactor>0.8</GlobalLearningFactor>
+            <GlobalLearningFactor>0.6</GlobalLearningFactor>
         </statFactors>
     </GeneDef>
     <!-- Goliath: Male Dominant -->

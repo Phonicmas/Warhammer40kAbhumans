@@ -4,6 +4,7 @@
 	<author>Phonicmas</author>
 	<supportedVersions>
 		<li>1.4</li>
+		<li>1.5</li>
 	</supportedVersions>
 	<packageId>Phonicmas.40kAbhumans</packageId>
 	<description>
@@ -27,5 +28,6 @@
 		<li>OskarPotocki.VanillaFactionsExpanded.Core</li>
 		<li>RedMattis.BetterPrerequisites</li>
 		<li>Phonicmas.40kCore</li>
+		<li>Phonicmas.40kFactions</li>
 	</loadAfter>
 </ModMetaData>

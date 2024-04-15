@@ -5,6 +5,7 @@ using UnityEngine;
 using Verse;
 using System.Linq;
 using Core40k;
+using System;
 
 namespace Abhumans40k
 {
@@ -19,6 +20,8 @@ namespace Abhumans40k
         private GlobalTargetInfo[] targets;
 
         private List<Pawn> pawnsToSpawn;
+
+        private static WarpTravelGameComponent warpTravelGameComponent = Current.Game.GetComponent<WarpTravelGameComponent>();
 
         public override void DoAction()
         {
@@ -53,12 +56,7 @@ namespace Abhumans40k
                 }
             }
         }
-
-        private Pawn AlliedPawnOnMap(Map targetMap)
-        {
-            return targetMap.mapPawns.AllPawnsSpawned.FirstOrDefault((Pawn p) => !p.NonHumanlikeOrWildMan() && p.IsColonist && p.HomeFaction == Faction.OfPlayer && !PawnsToTeleport().Contains(p));
-        }
-
+        
         public override bool CanHitTargetTile(GlobalTargetInfo target)
         {
             int range = Find.WorldGrid.TraversalDistanceBetween((CasterPawn.GetCaravan() != null) ? CasterPawn.GetCaravan().Tile : Caster.Map.Tile, target.Tile);
@@ -93,143 +91,22 @@ namespace Abhumans40k
                 caravan.Destroy();
             }
 
-            pawnsToSpawn = list;
-            travelDuration = travelDurationRange.RandomInRange;
-            travelledTime = 0;
             base.Cast(targets);
-        }
-
-        public override void Tick()
-        {
-            if (travelDuration != -2)
-            {
-                if (travelledTime == travelDuration)
-                {
-                    ExitWarp();
-                    string teleportedPawns = "";
-                    for (int i = 0; i < pawnsToSpawn.Count; i++)
-                    {
-                        teleportedPawns += pawnsToSpawn[i].NameShortColored;
-                        if (i == pawnsToSpawn.Count-2)
-                        {
-                            teleportedPawns += " and ";
-                        }
-                        else if ( i != pawnsToSpawn.Count-1)
-                        {
-                            teleportedPawns += ", ";
-                        }
-                    }
-
-                    string timeSpent = "";
-                    if (travelDuration/2500 == 1)
-                    {
-                        timeSpent = "1 hour";
-                    }
-                    else
-                    {
-                        timeSpent = (travelDuration / 2500) + "hours";
-                    }
-
-                    Letter_JumpTo letter = new Letter_JumpTo
-                    {
-                        lookTargets = Caster,
-                        def = Abhumans40kDefOf.BEWH_WarpTravel,
-                        Text = "WarpTravelMessage".Translate(Caster.Named("PAWN"), timeSpent, teleportedPawns),
-                        title = "WarpTravelLetter".Translate()
-                    };
-
-                    Find.LetterStack.ReceiveLetter(letter);
-
-                    travelDuration = -2;
-                    travelledTime = -1;
-                }
-                else
-                {
-                    travelledTime++;
-                }
-            }
-            base.Tick();
-        }
-
-        private void ExitWarp()
-        {
-            Caravan caravan = pawn.GetCaravan();
-            Map targetMap = ((targets[0].WorldObject is MapParent mapParent) ? mapParent.Map : null);
-            IntVec3 targetCell = IntVec3.Invalid;
-            if (targetMap != null)
-            {
-                Pawn pawn = AlliedPawnOnMap(targetMap);
-                if (pawn != null)
-                {
-                    IntVec3 position = pawn.Position;
-                    if (true)
-                    {
-                        targetCell = position;
-                    }
-                }
-            }
-            //Another allied pawn is on map which is being teleported too
-            if (targetCell.IsValid)
-            {
-                foreach (Pawn item in pawnsToSpawn)
-                {
-                    CellFinder.TryFindRandomSpawnCellForPawnNear(targetCell, targetMap, out var result, 4, (IntVec3 cell) => cell != targetCell && cell.GetRoom(targetMap) == targetCell.GetRoom(targetMap));
-                    GenSpawn.Spawn(item, result, targetMap);
-                    item.teleporting = false;
-                    if (item.drafter != null && item.IsColonistPlayerControlled)
-                    {
-                        item.drafter.Drafted = true;
-                    }
-                    item.Notify_Teleported();
-                    if (item.IsPrisoner)
-                    {
-                        item.guest.WaitInsteadOfEscapingForDefaultTicks();
-                    }
-                    if ((item.IsColonist || item.RaceProps.packAnimal) && item.Map.IsPlayerHome)
-                    {
-                        item.inventory.UnloadEverything = true;
-                    }
-                }
-
-                if (Find.WorldSelector.IsSelected(caravan))
-                {
-                    Find.WorldSelector.Deselect(caravan);
-                }
-                caravan?.Destroy();
-            }
-            //Teleport to friendly caravan on world map
-            else if (targets[0].WorldObject is Caravan caravan2 && caravan2.Faction == pawn.Faction)
-            {
-                if (caravan != null)
-                {
-                    caravan.pawns.TryTransferAllToContainer(caravan2.pawns);
-                    caravan2.Notify_Merged(new List<Caravan> { caravan });
-                    caravan.Destroy();
-                }
-                else
-                {
-                    foreach (Pawn item2 in pawnsToSpawn)
-                    {
-                        caravan2.AddPawn(item2, addCarriedPawnToWorldPawnsIfAny: true);
-                    }
-                }
-            }
-            //Teleport from world map to world map
-            else if (caravan != null)
-            {
-                caravan.Tile = targets[0].Tile;
-                caravan.pather.StopDead();
-            }
-            //Teleport to unoccupied world map tile
-            else
-            {
-                CaravanMaker.MakeCaravan(pawnsToSpawn, pawn.Faction, targets[0].Tile, addToWorldPawnsIfNotAlready: false);
-            }
+            warpTravelGameComponent.AddToTravels(CasterPawn, list, targets);
         }
 
         public override void GizmoUpdateOnMouseover()
         {
             GenDraw.DrawRadiusRing(pawn.Position, GetRadiusForPawn(), Color.blue);
+        }
+
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            Scribe_Values.Look(ref travelDuration, "travelDuration", -2);
+            Scribe_Values.Look(ref travelledTime, "travelledTime", -1);
+            Scribe_Collections.Look(ref pawnsToSpawn, saveDestroyedThings: true, "pawnsToSpawn", LookMode.Reference);
+            //Scribe_Deep.Look(ref targets, "targets", LookMode.GlobalTargetInfo);
         }
     }
 }

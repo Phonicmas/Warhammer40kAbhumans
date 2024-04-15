@@ -49,7 +49,7 @@
         <description>Carriers of this gene are not very diplomatic by nature, and tend to say things bluntly.</description>
         <iconPath>UI/Genes/Tactless</iconPath>
         <biostatCpx>1</biostatCpx>
-        <biostatMet>2</biostatMet>
+        <biostatMet>3</biostatMet>
         <displayOrderInCategory>33</displayOrderInCategory>
         <aptitudes>
             <Social>-4</Social>
@@ -68,7 +68,7 @@
         <description>Carriers of this gene are rather sturdy and strong.</description>
         <iconPath>UI/Genes/SturdyBuild</iconPath>
         <biostatCpx>2</biostatCpx>
-        <biostatMet>-2</biostatMet>
+        <biostatMet>-4</biostatMet>
         <displayOrderInCategory>34</displayOrderInCategory>
         <statOffsets>
             <CarryingCapacity>75</CarryingCapacity>

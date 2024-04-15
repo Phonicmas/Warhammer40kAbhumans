@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <!-- Ratling: Small Stature -->
+    <GeneDef ParentName="BEWH_Ratling">
+        <defName>BEWH_RatlingSmallStature</defName>
+        <label>small stature</label>
+        <description>Carriers of this gene are small in stature.</description>
+        <iconPath>UI/Genes/SmallStature</iconPath>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>0</biostatMet>
+        <displayOrderInCategory>1</displayOrderInCategory>
+        <statFactors>
+            <LeatherAmount>0.65</LeatherAmount>
+            <MeatAmount>0.65</MeatAmount>
+            <Mass>0.65</Mass>
+            <VEF_CosmeticBodySize_Multiplier>0.65</VEF_CosmeticBodySize_Multiplier>
+        </statFactors>
+        <missingGeneRomanceChanceFactor>0.5</missingGeneRomanceChanceFactor>
+        <customEffectDescriptions>
+            <li>Decreased Size</li>
+        </customEffectDescriptions>
+        <exclusionTags>
+            <li>Body_Size_Multiplier</li>
+        </exclusionTags>
+    </GeneDef>
+    <!-- Ratling: High On Life -->
+    <GeneDef ParentName="BEWH_Ratling">
+        <defName>BEWH_RatlingHighOnLife</defName>
+        <label>high on life</label>
+        <description>Carriers of this gene are gregarious, loves to eat and procreate uncontrollably.</description>
+        <iconPath>UI/Genes/HighOnLife</iconPath>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>-1</biostatMet>
+        <displayOrderInCategory>2</displayOrderInCategory>
+        <forcedTraits>
+            <li>
+                <def>NaturalMood</def>
+                <degree>1</degree>
+            </li>
+        </forcedTraits>
+        <capMods>
+            <li>
+                <capacity>Eating</capacity>
+                <postFactor>1.15</postFactor>
+            </li>
+        </capMods>
+        <lovinMTBFactor>0.4</lovinMTBFactor>
+        <customEffectDescriptions>
+            <li>Increases the chance of lovin'.</li>
+        </customEffectDescriptions>
+        <exclusionTags>
+            <li>Libido</li>
+        </exclusionTags>
+    </GeneDef>
+    <!-- Ratling: Excellent Shot -->
+    <GeneDef ParentName="BEWH_Ratling">
+        <defName>BEWH_RatlingExcellentShot</defName>
+        <label>excellent shot</label>
+        <description>Carriers of this gene are natural excellent shots, and make for great snipers.</description>
+        <iconPath>UI/Genes/ExcellentShot</iconPath>
+        <biostatCpx>3</biostatCpx>
+        <biostatMet>-4</biostatMet>
+        <displayOrderInCategory>3</displayOrderInCategory>
+        <capMods>
+            <li>
+                <capacity>Sight</capacity>
+                <postFactor>1.15</postFactor>
+            </li>
+            <li>
+                <capacity>Manipulation</capacity>
+                <postFactor>1.05</postFactor>
+            </li>
+        </capMods>
+        <statFactors>
+            <AimingDelayFactor>0.95</AimingDelayFactor>
+            <ShootingAccuracyFactor_Long>1.2</ShootingAccuracyFactor_Long>
+        </statFactors>
+        <statOffsets>
+            <ShootingAccuracyPawn>4</ShootingAccuracyPawn>
+        </statOffsets>
+        <aptitudes>
+            <Shooting>4</Shooting>
+        </aptitudes>
+        <passionMod>
+            <skill>Shooting</skill>
+            <modType>AddOneLevel</modType>
+        </passionMod>
+        <customEffectDescriptions>
+            <li>No loss in shooting skill</li>
+        </customEffectDescriptions>
+        <modExtensions>
+            <li Class="VanillaGenesExpanded.GeneExtension">
+                <noSkillLoss>Shooting</noSkillLoss>
+            </li>
+        </modExtensions>
+    </GeneDef>
+    <!-- Ratling: Natural Sneak -->
+    <GeneDef ParentName="BEWH_Ratling">
+        <defName>BEWH_RatlingNaturalSneak</defName>
+        <label>natural sneak</label>
+        <description>Carriers of this gene posses an innate aptitude for sneaking about and escaping unlucky situations they might find themselves in.</description>
+        <iconPath>UI/Genes/NaturalSneak</iconPath>
+        <biostatCpx>2</biostatCpx>
+        <biostatMet>-2</biostatMet>
+        <displayOrderInCategory>4</displayOrderInCategory>
+        <statOffsets>
+            <MoveSpeed>0.45</MoveSpeed>
+        </statOffsets>
+        <forcedTraits>
+            <li>
+                <def>Nimble</def>
+            </li>
+        </forcedTraits>
+        <statFactors>
+            <HuntingStealth>1.4</HuntingStealth>
+        </statFactors>
+    </GeneDef>
+    <!-- Ratling: Physically Weak -->
+    <GeneDef ParentName="BEWH_Ratling">
+        <defName>BEWH_RatlingPhysicallyWeak</defName>
+        <label>physically weak</label>
+        <description>Carriers of this gene are physically weak and are unable to stand their own in melee combat.</description>
+        <iconPath>UI/Genes/PhysicallyWeak</iconPath>
+        <biostatCpx>2</biostatCpx>
+        <biostatMet>4</biostatMet>
+        <displayOrderInCategory>5</displayOrderInCategory>
+        <statOffsets>
+            <CarryingCapacity>-15</CarryingCapacity>
+        </statOffsets>
+        <statFactors>
+            <MeleeDamageFactor>0.6</MeleeDamageFactor>
+            <MeleeHitChance>0.8</MeleeHitChance>
+            <StaggerDurationFactor>1.2</StaggerDurationFactor>
+        </statFactors>
+        <forcedTraits>
+            <li>
+                <def>Delicate</def>
+            </li>
+        </forcedTraits>
+        <painFactor>1.3</painFactor>
+        <exclusionTags>
+            <li>Pain</li>
+            <li>WoundHealingRate</li>
+            <li>Toughness</li>
+            <li>MeleeDamage</li>
+        </exclusionTags>
+    </GeneDef>
+
+</Defs>

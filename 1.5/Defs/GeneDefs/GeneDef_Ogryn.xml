@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <!-- Ogryn: Huge Stature -->
+    <GeneDef ParentName="BEWH_Ogryn">
+        <defName>BEWH_OgrynHugeStature</defName>
+        <label>huge stature</label>
+        <description>Carriers of this gene are huge in stature.</description>
+        <iconPath>UI/Genes/HugeStature</iconPath>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>0</biostatMet>
+        <displayOrderInCategory>21</displayOrderInCategory>
+        <statFactors>
+            <LeatherAmount>1.3</LeatherAmount>
+            <MeatAmount>1.3</MeatAmount>
+            <Mass>1.3</Mass>
+            <VEF_CosmeticBodySize_Multiplier>1.3</VEF_CosmeticBodySize_Multiplier>
+        </statFactors>
+        <missingGeneRomanceChanceFactor>0.5</missingGeneRomanceChanceFactor>
+        <customEffectDescriptions>
+            <li>Increased Size</li>
+        </customEffectDescriptions>
+        <exclusionTags>
+            <li>Body_Size_Multiplier</li>
+        </exclusionTags>
+    </GeneDef>
+    <!-- Ogryn: Crushing Strength -->
+    <GeneDef ParentName="BEWH_Ogryn">
+        <defName>BEWH_OgrynCrushingStrength</defName>
+        <label>crushing strength</label>
+        <description>Carriers of this gene have strength that rival that of space marines.</description>
+        <iconPath>UI/Genes/CrushingStrength</iconPath>
+        <biostatCpx>2</biostatCpx>
+        <biostatMet>-4</biostatMet>
+        <displayOrderInCategory>22</displayOrderInCategory>
+        <statOffsets>
+            <CarryingCapacity>150</CarryingCapacity>
+        </statOffsets>
+        <statFactors>
+            <MeleeDamageFactor>2.15</MeleeDamageFactor>
+        </statFactors>
+        <aptitudes>
+            <Melee>10</Melee>
+        </aptitudes>
+        <passionMod>
+            <skill>Melee</skill>
+            <modType>AddOneLevel</modType>
+        </passionMod>
+        <customEffectDescriptions>
+            <li>No loss in melee skill</li>
+        </customEffectDescriptions>
+        <modExtensions>
+            <li Class="VanillaGenesExpanded.GeneExtension">
+                <noSkillLoss>Melee</noSkillLoss>
+            </li>
+        </modExtensions>
+        <exclusionTags>
+            <li>MeleeDamage</li>
+        </exclusionTags>
+    </GeneDef>
+    <!-- Ogryn: Robust Toughness -->
+    <GeneDef ParentName="BEWH_Ogryn">
+        <defName>BEWH_OgrynRobustToughness</defName>
+        <label>robust toughness</label>
+        <description>Carriers of this gene are more resillient and can take a good beating without breaking.</description>
+        <iconPath>UI/Genes/RobustToughness</iconPath>
+        <biostatCpx>2</biostatCpx>
+        <biostatMet>-3</biostatMet>
+        <displayOrderInCategory>23</displayOrderInCategory>
+        <statFactors>
+            <StaggerDurationFactor>0.25</StaggerDurationFactor>
+        </statFactors>
+        <statOffsets>
+            <ComfyTemperatureMin>-15</ComfyTemperatureMin>
+            <ComfyTemperatureMax>15</ComfyTemperatureMax>
+            <MoveSpeed>-0.25</MoveSpeed>
+        </statOffsets>
+        <forcedTraits>
+            <li>
+                <def>Tough</def>
+            </li>
+        </forcedTraits>
+        <suppressedTraits>
+            <li>
+                <def>Wimp</def>
+            </li>
+        </suppressedTraits>
+        <painFactor>0.8</painFactor>
+        <exclusionTags>
+            <li>Pain</li>
+            <li>WoundHealingRate</li>
+            <li>Toughness</li>
+        </exclusionTags>
+    </GeneDef>
+    <!-- Ogryn: Kind Soul -->
+    <GeneDef ParentName="BEWH_Ogryn">
+        <defName>BEWH_OgrynKindSoul</defName>
+        <label>kind soul</label>
+        <description>Carriers of this gene are kind to those around them.</description>
+        <iconPath>UI/Genes/KindSoul</iconPath>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>-1</biostatMet>
+        <displayOrderInCategory>24</displayOrderInCategory>
+        <socialFightChanceFactor>0.5</socialFightChanceFactor>
+        <aggroMentalBreakSelectionChanceFactor>0.5</aggroMentalBreakSelectionChanceFactor>
+        <forcedTraits>
+            <li>
+                <def>Kind</def>
+            </li>
+        </forcedTraits>
+    </GeneDef>
+    <!-- Ogryn: Stunted Intellect -->
+    <GeneDef ParentName="BEWH_Ogryn">
+        <defName>BEWH_OgrynStuntedIntellect</defName>
+        <label>stunted intellect</label>
+        <description>Carriers of this gene have a stunted intellect, they operate at a level similar to children and as such cannot perform complex task.</description>
+        <iconPath>UI/Genes/StuntedIntellect</iconPath>
+        <biostatCpx>4</biostatCpx>
+        <biostatMet>7</biostatMet>
+        <displayOrderInCategory>24</displayOrderInCategory>
+        <statFactors>
+            <SocialImpact>0.45</SocialImpact>
+            <NegotiationAbility>0.1</NegotiationAbility>
+            <TradePriceImprovement>0.1</TradePriceImprovement>
+            <DrugSellPriceImprovement>0.1</DrugSellPriceImprovement>
+            <GlobalLearningFactor>0.35</GlobalLearningFactor>
+        </statFactors>
+        <!--<disabledWorkTags>ManualSkilled</disabledWorkTags>-->
+        <forcedTraits>
+            <li>
+                <def>BEWH_OgrynStuntedIntellect</def>
+            </li>
+        </forcedTraits>
+        <exclusionTags>
+            <li>Learning</li>
+        </exclusionTags>
+    </GeneDef>
+    <!-- Ogryn: Patched Intellect -->
+    <GeneDef ParentName="BEWH_Ogryn">
+        <defName>BEWH_OgrynPatchedIntellect</defName>
+        <label>patched intellect</label>
+        <description>Carriers of this gene once had a stunted intellect, but due to technology they're now able to do things they otherwise couldn't.</description>
+        <iconPath>UI/Genes/PatchedIntellect</iconPath>
+        <biostatCpx>8</biostatCpx>
+        <biostatMet>7</biostatMet>
+        <displayOrderInCategory>25</displayOrderInCategory>
+        <statFactors>
+            <SocialImpact>0.8</SocialImpact>
+            <NegotiationAbility>0.6</NegotiationAbility>
+            <TradePriceImprovement>0.6</TradePriceImprovement>
+            <DrugSellPriceImprovement>0.6</DrugSellPriceImprovement>
+            <GlobalLearningFactor>0.65</GlobalLearningFactor>
+        </statFactors>
+        <exclusionTags>
+            <li>Learning</li>
+        </exclusionTags>
+        <modExtensions>
+            <li Class="VanillaGenesExpanded.GeneExtension">
+                <hideGene>true</hideGene>
+            </li>
+        </modExtensions>
+    </GeneDef>
+
+</Defs>

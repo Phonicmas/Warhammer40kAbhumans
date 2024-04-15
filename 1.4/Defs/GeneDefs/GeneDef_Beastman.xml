@@ -133,7 +133,7 @@
     <!-- Beastman: Chaos Connections -->
     <GeneDef ParentName="BEWH_Beastman">
         <defName>BEWH_BeastmanChaosConnection</defName>
-        <label>goat head</label>
+        <label>chaos connection</label>
         <description>Carriers of this gene have a closer connection to the warp.</description>
         <iconPath>UI/Genes/ChaosConnection</iconPath>
         <biostatCpx>1</biostatCpx>
